@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://cs8hj6p87ud31"]
+
+[ext_resource type="Texture2D" uid="uid://b1iv8vbsgg17" path="res://assets/tiles/test/debug_tile.png" id="1_cb3sc"]
+[ext_resource type="PackedScene" uid="uid://csf4i088k0ek8" path="res://src/characters/megaman/megaman_playable.tscn" id="2_b0x08"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_c7e3c"]
+texture = ExtResource("1_cb3sc")
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSet" id="TileSet_usswf"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_c7e3c")
+
+[node name="test_map" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(128, 120)
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_usswf")
+collision_animatable = true
+format = 2
+layer_0/tile_data = PackedInt32Array(851968, 0, 0, 917504, 0, 0, 851969, 0, 0, 917505, 0, 0, 851970, 0, 0, 917506, 0, 0, 851971, 0, 0, 917507, 0, 0, 851972, 0, 0, 917508, 0, 0, 851973, 0, 0, 917509, 0, 0, 851974, 0, 0, 917510, 0, 0, 851975, 0, 0, 917511, 0, 0, 851976, 0, 0, 917512, 0, 0, 851977, 0, 0, 917513, 0, 0, 851978, 0, 0, 917514, 0, 0, 851979, 0, 0, 917515, 0, 0, 851980, 0, 0, 917516, 0, 0, 851981, 0, 0, 917517, 0, 0, 851982, 0, 0, 917518, 0, 0, 851983, 0, 0, 917519, 0, 0, 0, 0, 0, 65536, 0, 0, 131072, 0, 0, 196608, 0, 0, 262144, 0, 0, 327680, 0, 0, 393216, 0, 0, 458752, 0, 0, 524288, 0, 0, 589824, 0, 0, 655360, 0, 0, 720896, 0, 0, 786432, 0, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 0, 5, 0, 0, 6, 0, 0, 7, 0, 0, 8, 0, 0, 9, 0, 0, 10, 0, 0, 11, 0, 0, 12, 0, 0, 13, 0, 0, 14, 0, 0, 15, 0, 0, 65551, 0, 0, 131087, 0, 0, 196623, 0, 0, 262159, 0, 0, 327695, 0, 0, 393231, 0, 0, 458767, 0, 0, 524303, 0, 0, 589839, 0, 0, 655375, 0, 0, 720911, 0, 0, 786447, 0, 0, 655370, 0, 0, 524300, 0, 0, 393223, 0, 0, 262147, 0, 0)
+
+[node name="megaman" parent="." instance=ExtResource("2_b0x08")]
+position = Vector2(65, 62)
